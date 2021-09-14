@@ -1,0 +1,71 @@
+:root {
+    --main-bg: #7dd67d;
+}
+
+body, button, li {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.container {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  flex: 1;
+  color: white;
+  text-align: center;
+  background: var(--main-bg);
+  margin: 20px 0 5px 0;
+}
+
+li {
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+.skills-list {
+  list-style-type: none;
+  vertical-align: middle;
+}
+
+.skill-text {
+  padding: 0 10px;
+  vertical-align: middle;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-input {
+  width: 63%;
+  font-size: 16px;
+  padding: 5px;
+  border-color: var(--main-bg);
+  border-style: solid;
+}
+
+.delete-skill-button  {
+  height: 30px;
+  width: 30px;
+  background: rgb(238, 101, 101);
+  font-size: 28px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.add-skill-button {
+  width: 33%;
+  font-size: 16px;
+  border-color: var(--main-bg);
+  border-style: solid;
+  background: none;
+  color: var(--main-bg);
+  cursor: pointer;
+}
