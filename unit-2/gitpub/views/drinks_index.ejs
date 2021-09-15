@@ -7,7 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+    <% 
+    const capitalizeWords = str => {
+        let res = [];
+        for (word of str.split(' ')) {
+            res.push(word.charAt(0).toUpperCase() + word.substring(1));
+        }
+        return res.join(' ');
+    }
+    %> 
+
     <h1>Welcome to GitPub</h1>
+
+    <ul>
+        <% for (let i = 0; i < drinks.length; i++) { %>
+            <li>
+                <a href="/drinks/<%= i %>">
+                    <%= capitalizeWords(drinks[i].name) %> 
+                </a>
+            </li>
+        <% } %> 
+    </ul>
+
     <style>
         body {
             background-color: blanchedalmond;
