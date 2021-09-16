@@ -10,10 +10,10 @@ app.get('/drinks', (req, res) => {
     res.render('drinks_index.ejs', {drinks : drinks});
 });
 
-app.get('/drinks/:indexOfDrink', (req, res) => {
-    res.send('drink show page');
+app.get('/drinks/:id', (req, res) => {
+    res.render('drinks_show.ejs', {drink : drinks[req.params.id]});
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('listening on port 3000');
 });
