@@ -8,12 +8,17 @@
     <title>Foo (d)</title>
 </head>
 <body>
+    <h1>Food</h1>
+
     <ul>
         <% for (let i = 0; i < food.length; i++) { %>
-            <li>
-                <a href="/food/<%= i %>">
-                    <%=food[i].name%> 
-                </a>
+            <li onclick="location.href='/food/<%= i %>';">
+                <div>
+                    <%= (food[i].name) %> 
+                </div>
+                <div>
+                    $<%= food[i].price %> 
+                </div>
             </li>
         <% } %> 
     </ul>

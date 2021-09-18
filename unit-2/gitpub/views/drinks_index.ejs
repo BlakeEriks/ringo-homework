@@ -18,12 +18,17 @@
     }
     %> 
 
+    <h1>Drinks</h1>
+
     <ul>
         <% for (let i = 0; i < drinks.length; i++) { %>
-            <li>
-                <a href="/drinks/<%= i %>">
+            <li onclick="location.href='/drinks/<%= i %>';">
+                <div>
                     <%= capitalizeWords(drinks[i].name) %> 
-                </a>
+                </div>
+                <div>
+                    $<%= drinks[i].price %> 
+                </div>
             </li>
         <% } %> 
     </ul>
