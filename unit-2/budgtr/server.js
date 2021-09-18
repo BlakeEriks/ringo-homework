@@ -6,20 +6,20 @@ const budget = require('./models/budget')
 app.use( express.urlencoded({ extended : false }))
 app.use(express.static('public'))
 
-app.get('/budgets', (req,res) => {
+app.get('/budget', (req,res) => {
     res.render('index.ejs', {budget: budget});
 })
 
-app.post('/budgets', (req,res) => {
+app.post('/budget', (req,res) => {
     res.redirect('/budgets');
 })
 
-app.get('/budgets/new', (req,res) => {
-    render('new.ejs');
+app.get('/budget/new', (req,res) => {
+    res.render('new.ejs');
 })
 
-app.get('/budgets/:index', (req,res) => {
-    render('show.ejs');
+app.get('/budget/:index', (req,res) => {
+    res.render('show.ejs', {item: budget[req.params.index]});
 })
 
 app.listen(3000)
