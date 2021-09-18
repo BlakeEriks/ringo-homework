@@ -7,7 +7,7 @@ app.use( express.urlencoded({ extended : false }))
 app.use(express.static('public'))
 
 app.get('/budgets', (req,res) => {
-    res.render('index.ejs', {budgets: budgets});
+    res.render('index.ejs', {budget: budget});
 })
 
 app.post('/budgets', (req,res) => {
