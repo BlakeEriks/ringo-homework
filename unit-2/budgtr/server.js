@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const budget = require('./models/budget')
+let bankAccount = 2000
 
 /* Parse request bodies if content-type is application/x-www-form-urlencoded */
 app.use( express.urlencoded({ extended : false }))
@@ -12,7 +13,8 @@ app.get('/budget', (req,res) => {
 
 app.post('/budget', (req,res) => {
     console.log(req.body);
-    res.redirect('/budgets');
+    budget.push(req.body);
+    res.redirect('/budget');
 })
 
 app.get('/budget/new', (req,res) => {
