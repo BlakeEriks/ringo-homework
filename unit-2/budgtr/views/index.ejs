@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("partials/head.ejs", {title: 'Budgets'}) %> 
+<% let bankAccount = 0 
+for (item of budget) bankAccount += item.amount
+%>
+<style>
+    body {
+        <%if (bankAccount > 0) {%> 
+            background-color: lime;
+        <% } else { %>
+            background-color: red;
+        <% } %>
+    }
+</style> 
 <body>
     <div class="container">
         <h1>Budgtr ALL</h1>
-            <table>
-                <% for (let i = 0; i < budget.length; i++) { %>
-                   <tr>
-                       <td> <%= budget[i].date %> </td>
-                       <td> 
-                           <a href="/budget/<%= i %> "> <%= budget[i].name %></a>
-                        </td>
-                       <td> <%= budget[i].amount %>  </td>
-                   </tr> 
-                <% } %> 
-            </table>
-            <a href="/budget/new">New Item</a>
-        </div>
+        <h5>Bank Account - $<%= bankAccount %></h5>
+        <table>
+            <% for (let i = 0; i < budget.length; i++) { %>
+                <tr>
+                    <td> <%= budget[i].date %> </td>
+                    <td> 
+                        <a href="/budget/<%= i %> "> <%= budget[i].name %></a>
+                    </td>
+                    <td> <%= budget[i].amount %>  </td>
+                    <% bankAccount += budget[i].amount %> 
+                </tr> 
+            <% } %> 
+        </table>
+        <a href="/budget/new">New Item</a>
+    </div>
+    <style>
+        body {
+            background-color: '<%=bankAccount > 0 ? 'green' : 'red'%>' ;
+        }
+    </>
 </body>
 </html>
