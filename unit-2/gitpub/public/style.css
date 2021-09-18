@@ -1,4 +1,51 @@
+html {
+    background: white;
+}
+
 body {
+    width: 500px;
+    margin: 30px auto;
     background-color: blanchedalmond;
-    color: chocolate; 
+    color: chocolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.img-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 21px;
+}
+
+.display-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    border: 3px solid chocolate;
+    overflow: hidden;
+    background-size: cover;
+    justify-content: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+.img-text {
+    font-size: 32px;
+    color: cornsilk;
+}
+
+.food {
+    background-image: url("https://www.helpguide.org/wp-content/uploads/table-with-grains-vegetables-fruit-768.jpg");
+}
+
+.drink {
+    background-image: url("https://images.theconversation.com/files/194291/original/file-20171113-27595-ox08qm.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip");
 }

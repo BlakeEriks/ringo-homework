@@ -6,11 +6,15 @@ const food = require('./models/food')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Gitpub App!');
+    res.render('index.ejs');
 });
 
 app.get('/food', (req,res) => {
     res.render('food_index.ejs', {food : food})
+})
+
+app.get('/food/:id', (req,res) => {
+    res.render('food_show.ejs', {food : food[req.params.id]})
 })
 
 app.get('/drinks', (req, res) => {
