@@ -1,9 +1,13 @@
 const express = require('express')
 const app = express()
-const budgets = require('./models/budget')
+const budget = require('./models/budget')
+
+/* Parse request bodies if content-type is application/x-www-form-urlencoded */
+app.use( express.urlencoded({ extended : false }))
+app.use(express.static('public'))
 
 app.get('/budgets', (req,res) => {
-    render('index.ejs', {budgets: budgets});
+    res.render('index.ejs', {budgets: budgets});
 })
 
 app.post('/budgets', (req,res) => {
