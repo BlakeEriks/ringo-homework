@@ -8,10 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>At foo bar</h1>
-    <h2><%= drink.name %></h2>
+    <h1 style="display:inline;"><%= drink.name %> - $<%= drink.price %></h1 style="display:inline;">
     <img src="<%= drink.image%>" />
-    <h3>$<%= drink.price %></h3>
-    <a href="/drinks" >Go Back</a>
+    <a href="/food" style="text-align: center;margin-top:5px;">Go Back</a>
 </body>
 </html>

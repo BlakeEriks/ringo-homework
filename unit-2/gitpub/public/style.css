@@ -2,6 +2,10 @@ html {
     background: white;
 }
 
+html > * {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 body {
     width: 500px;
     margin: 30px auto;
@@ -75,4 +79,11 @@ li {
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+img {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
 }
