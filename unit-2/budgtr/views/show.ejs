@@ -7,10 +7,12 @@
         <form action="/budget" method="GET">
             <button type="submit">Back</button>
         </form>
-        <h3><%= item.from %> </h3>
-        <h3><%= item.amount %> </h3>
+        <p><b>Date</b> - <%= item.date %> </p>
+        <p><b>From</b> - <%= item.from %> </p>
+        <p><b>Amount</b> - <%= item.amount %> </p>
+        <span><b>tags - </b></span>
         <% for (tag of item.tags) {%>
-            <h3 style="display:inline;"><%= tag %> </h3>
+            <p style="display:inline;"><%= tag %> </p>
         <% } %> 
     </div>    
 </body>
