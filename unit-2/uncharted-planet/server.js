@@ -32,7 +32,6 @@ app.delete('/:index', (req,res) => {
 })
 
 app.put('/:index', (req,res) => {
-    console.log(req.body);
     scientists[req.params.index] = req.body;
     res.redirect('/')
 })
@@ -42,7 +41,7 @@ app.get('/:index/edit', (req,res) => {
 })
 
 app.get('/:index', (req, res) => {
-    res.render('show.ejs', {scientist: scientists[req.params.index]})
+    res.render('show.ejs', {scientist: scientists[req.params.index], index: req.params.index})
 })
 
 app.listen(3000)
