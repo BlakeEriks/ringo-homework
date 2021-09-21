@@ -10,8 +10,11 @@
     <h1>Scientists</h1>
     <% for (let i = 0; i < scientists.length; i++) { %> 
         <a href="/<%= i %>"><%= scientists[i].name%></a><br>
+        <form action="/<%= i %>/edit" method="GET">
+            <button type="submit">Edit</button>
+        </form>
         <form action="/<%= i %>?_method=DELETE" method="POST">
-            <button type="submit">DELETE</button>
+            <button type="submit">Delete</button>
         </form>
     <% } %>
     <br>

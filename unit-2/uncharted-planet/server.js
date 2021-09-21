@@ -1,7 +1,13 @@
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
-const scientists = []
+const scientists = [
+{name : "Steve", description: "loves ferns"},
+{name : "Laura", description: "microbio specialist"},
+{name : "Jordan", description: "huge fan"},
+{name : "Jorge", description: "spell caster"},
+{name : "Cameron", description: "moon baller"}
+]
 
 /* MIDDLEWARE */
 app.use(express.urlencoded({extended: true}))
@@ -23,6 +29,16 @@ app.get('/new', (req,res) => {
 app.delete('/:index', (req,res) => {
     scientists.splice(req.params.index, 1);
     res.redirect('/')
+})
+
+app.put('/:index', (req,res) => {
+    console.log(req.body);
+    scientists[req.params.index] = req.body;
+    res.redirect('/')
+})
+
+app.get('/:index/edit', (req,res) => {
+    res.render('edit.ejs', {scientist : scientists[req.params.index], index: req.params.index})
 })
 
 app.get('/:index', (req, res) => {
