@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include("partials/head.ejs", {title: 'Budgets'}) %> 
 <% let bankAccount = 0 
-for (item of budget) bankAccount += item.amount
+for (item of budget) bankAccount += Number(item.amount)
 %>
 <style>
     body {
@@ -16,7 +16,7 @@ for (item of budget) bankAccount += item.amount
 <body>
     <div class="container">
         <h1>Budgtr ALL</h1>
-        <h5>Bank Account - $<%= bankAccount %></h5>
+        <h5>Bank Account: $<%= bankAccount %></h5>
         <table>
             <% for (let i = 0; i < budget.length; i++) { %>
                 <tr>

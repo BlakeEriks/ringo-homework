@@ -12,9 +12,11 @@
         <p><b>Amount:</b> <%= item.amount %> </p>
         <% if (item.tags) { %> 
             <span><b>tags: </b></span>
-            <% for (tag of item.tags) {%>
-                <p style="display:inline;"><%= tag %> </p>
-            <% } %> 
+            <ul>
+                <% for (tag of item.tags) {%>
+                    <li> <%= tag %> </li>
+                <% } %> 
+            </ul>
         <% } %> 
     </div>    
 </body>

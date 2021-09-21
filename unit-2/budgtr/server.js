@@ -3,7 +3,7 @@ const app = express()
 const budget = require('./models/budget')
 
 /* Parse request bodies if content-type is application/x-www-form-urlencoded */
-app.use( express.urlencoded({ extended : false }))
+app.use( express.urlencoded({ extended : true }))
 app.use(express.static('public'))
 
 app.get('/budget', (req,res) => {
@@ -11,7 +11,7 @@ app.get('/budget', (req,res) => {
 })
 
 app.post('/budget', (req,res) => {
-    console.log(req.body);
+    req.body.tags = req.body.tags.split(',');
     budget.push(req.body);
     res.redirect('/budget');
 })
