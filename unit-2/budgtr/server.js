@@ -6,6 +6,10 @@ const budget = require('./models/budget')
 app.use( express.urlencoded({ extended : true }))
 app.use(express.static('public'))
 
+app.get('/', (req,res) => {
+    res.send('<a href="/budget">budgtr</a>');
+})
+
 app.get('/budget', (req,res) => {
     res.render('index.ejs', {budget: budget});
 })
