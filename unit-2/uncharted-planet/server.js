@@ -8,13 +8,19 @@ const scientists = [
 {name : "Jorge", description: "spell caster"},
 {name : "Cameron", description: "moon baller"}
 ]
+const categories = [
+    {name: "plants",
+    elements: ['fern', 'money plant', 'shrub']},
+    {name: "flowers",
+    elements: ['dandelion', 'sunflower', 'bougainvillea']}
+];
 
 /* MIDDLEWARE */
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
 app.get('/', (req,res) => {
-    res.render('index.ejs', {scientists: scientists})
+    res.render('index.ejs', {scientists: scientists, categories: categories})
 })
 
 app.post('/', (req,res) => {

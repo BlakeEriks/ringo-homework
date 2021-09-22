@@ -7,10 +7,13 @@
     <title>Edit <%= scientist.name %></title>
 </head>
 <body>
+    <form action="/<%= index %>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= scientist.name %> </button>
+    </form>
     <form action="/<%=index%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%=scientist.name%>">
         Description: <input type="text" name="description" value="<%=scientist.description%>">
-        <button type="submit"></button>
+        <button type="submit">Save</button>
     </form>
 </body>
 </html>

@@ -19,5 +19,14 @@
     <% } %>
     <br>
     <a href="/new">New Scientist</a>
+    <h1>Studied Life</h1>
+    <% for (let i = 0; i < categories.length; i++) { %> 
+        <p><%= categories[i].name %> </p>
+        <ul>
+            <% for (let j = 0; j < categories[i].elements.length; j++) { %> 
+                <li><%= categories[i].elements[j] %> </li>   
+            <% } %> 
+        </ul>
+    <% } %> 
 </body>
 </html>
