@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type='text/javascript' src='script.js' defer></script>
+    <title>Pokedex</title>
+</head>
+<script>
+    let dist = 0;
+    let ticking = false;
+    let $monLine;
+    let curMon = 0;
+    let leftMon = 150;
+    let rightMon = curMon + 1;
+    let pokemon = <%- JSON.stringify(pokemon) %>;
+
+    const preprocessMonImgs = () => {
+        for (pokemon of pokemon) {
+            let curMonImg = $('<img>');
+            curMonImg.attr('src', pokemon.img);
+            curMonImg.addClass('pokemon');
+            let monDiv = $('<div>');
+            monDiv.addClass('pokemon-card');
+            monDiv.append(curMonImg);
+            $('.poke-display').append(monDiv);
+        }
+    }
+
+    $(window).on('mousewheel', event => {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                dist = dist + (event.originalEvent.wheelDeltaY / 10);
+                if (dist > 0) dist = 0;
+                $('.poke-display').css('left', dist)
+                dist++;
+                ticking = false;
+            });
+        }
+        ticking = true;
+    })
+
+    $(document).ready( () => {
+        preprocessMonImgs();
+    })
+</script>
+
+<body>
+    <body class="main box">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="https://static.wikia.nocookie.net/pokemon-fano/images/6/6f/Poke_Ball.png">
+                    <img src="https://craig1123.github.io/pokedex/img/Pokedex.png">
+                </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">
+                  Home
+                </a>
+                <a class="navbar-item">
+                  Docu
+                </a>
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-primary">
+                      <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                      Log in
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </nav>
+    
+        <div class="view box">
+            <div class="poke-display"></div>
+        </div>
+        <div class="scroll box">Move me</div>
+    </div>
+</body>
+</html>

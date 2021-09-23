@@ -1,0 +1,41 @@
+.main {
+    width: 600px;
+    margin: 30px auto;
+}
+
+.navbar-menu {
+    display:flex;
+}
+
+
+.view {
+    margin: 20px;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%) inset, 0 0 0 1px rgb(10 10 10 / 2%) inset;
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+}
+
+.poke-display {
+    /* padding: 50px 0; */
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.scroll {
+    position: relative;
+}
+
+.pokemon-card {
+    margin: 20px;
+    width: 175px;
+    display: flex;
+    justify-content: center;
+}
+
+img.pokemon {
+    max-height: 200px;
+}
