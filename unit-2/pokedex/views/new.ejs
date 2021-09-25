@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head.ejs", {title: 'New Pokemon' }) %>
+<body class="main box">
+    <%- include("partials/navbar.ejs") %>
+    <div class="view box">
+        <div class="pokemon-info new">
+            <div class="pokemon-name">New Pokemon</div>
+            <form action="/pokemon" method="POST">
+                Name: <input type="text" name="name" placeholder="Bulbasaur"/> <br/>
+                ID: <input type="text" name="id" placeholder="152"/> <br/>
+                Img URL: <input type="text" name="img" placeholder="https://cdn-icons-png.flaticon.com"/> <br/>
+                Type(s): <input type="text" name="type" placeholder="ex: Grass,Normal"/> <br>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/535/535234.png"> <input class="poke-input stat" type="text" name="hp"></td>
+                        <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/233/233146.png"> <input class="poke-input stat" type="text" name="speed"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/99/99865.png"> <input class="poke-input stat" type="text" name="attack"></td>
+                        <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/786/786346.png"> <input class="poke-input stat" type="text" name="defence"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="stat-icon special" src="https://cdn-icons-png.flaticon.com/512/99/99865.png"> <input class="poke-input stat" type="text" name="spattack"></td>
+                        <td><img class="stat-icon special" src="https://cdn-icons-png.flaticon.com/512/786/786346.png"> <input class="poke-input stat" type="text" name="spdefence"></td>
+                    </tr>
+                </table>
+                <input style="margin-left: 25%;margin-top: 10px;" type="submit" value="Create Pokemon"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

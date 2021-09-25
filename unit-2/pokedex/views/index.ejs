@@ -16,7 +16,7 @@
             pokeNum.addClass('poke-num')
             pokeNum.text(pokemon.id);
             let monDiv = $('<a>');
-            monDiv.attr('href','/'+index)
+            monDiv.attr('href','pokemon/'+index)
             monDiv.addClass('pokemon-card');
             monDiv.append(curMonImg);
             monDiv.append(pokeNum);
@@ -33,7 +33,7 @@
     $(window).on('mousewheel', event => {
         if (!ticking) {
             window.requestAnimationFrame(function() {
-                dist = dist + (event.originalEvent.wheelDeltaY / 8);
+                dist = dist + (event.originalEvent.wheelDeltaY / 3);
                 updatePokemonDisplay();
                 ticking = false;
             });
@@ -43,15 +43,6 @@
 
     $(document).ready( () => {
         preprocessMonImgs();
-
-        $(".poke-search").submit(function(event) {
-            event.preventDefault();
-            let num = $(this).find(':last').val()
-            $(this).find(':last').val('')
-            if (isNaN(num) || Number(num) < 1 || Number(num) > 151) return;
-            dist = 100 - (214 * (num-1));
-            updatePokemonDisplay();
-        });
     })
 </script>
 
