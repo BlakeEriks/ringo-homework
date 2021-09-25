@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head.ejs", {title: pokemon.name }) %>
+<body>
+    <body class="main box">
+        <%- include("partials/navbar.ejs") %>
+        <div class="view box">
+            <div class="pokemon-show-img">
+                <img src="<%= pokemon.img %> ">
+            </div>
+            
+            <div class="pokemon-show-right">
+                <div class="pokemon-info">
+                    <div class="pokemon-name"><span class="pokemon-number">#<%= pokemon.id %></span>&nbsp;&nbsp;<%= pokemon.name %></div>
+                    <div class="pokemon-types">
+                        <% for (type of pokemon.type) { %>
+                            <span class="pokemon-type" style="background-color: <%= typeColors[type] %>;"><%= type %></span> 
+                        <% } %>
+                    </div>
+                    <table>
+                        <tr>
+                            <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/535/535234.png"> <%= pokemon.stats.hp %></td>
+                            <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/233/233146.png"> <%= pokemon.stats.speed %></td>
+                        </tr>
+                        <tr>
+                            <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/99/99865.png"> <%= pokemon.stats.attack %></td>
+                            <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/786/786346.png"> <%= pokemon.stats.defense %></td>
+                        </tr>
+                        <tr>
+                            <td><img class="stat-icon special" src="https://cdn-icons-png.flaticon.com/512/99/99865.png"> <%= pokemon.stats.spattack %></td>
+                            <td><img class="stat-icon special" src="https://cdn-icons-png.flaticon.com/512/786/786346.png"> <%= pokemon.stats.spdefense %></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,3 +1,11 @@
+:root {
+    --pokemon-red: #FF0000;
+    --pokemon-red-2: #CC0000;
+    --pokemon-gold: #FFDE00;
+    --pokemon-blue: #3B4CCA;
+    --theme-color-1: #00D1B2;
+}
+
 .main {
     width: 600px;
     margin: 30px auto;
@@ -7,6 +15,16 @@
     display:flex;
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
 
 .view {
     margin: 20px;
@@ -17,8 +35,8 @@
 }
 
 .poke-display {
-    /* padding: 50px 0; */
     position: relative;
+    top: 20px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -33,9 +51,85 @@
     margin: 20px;
     width: 175px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 215px;
 }
 
 img.pokemon {
     max-height: 200px;
+}
+
+.poke-num {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.show-pokemon {
+    display: flex;
+    align-items: center;
+}
+
+.pokemon-show-img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.pokemon-show-right {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px;
+    background-color: var(--theme-color-1);
+    border-radius: 4px;
+}
+
+.pokemon-name {
+    font-size: 30px;
+    padding: 0 0.5rem;
+    color: white;
+    border-radius: 4px;
+}
+
+.pokemon-number {
+    color: var(--pokemon-gold);
+}
+
+.pokemon-types {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pokemon-type {
+    padding: 0 5px;
+    color: white;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.stat-icon {
+    height: 20px;
+    filter: invert(98%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(101%) contrast(104%);
+}
+
+.special {
+    filter: invert(68%) sepia(36%) saturate(293%) hue-rotate(279deg) brightness(108%) contrast(102%);
+}
+
+td {
+    padding: 0 10px;
 }
