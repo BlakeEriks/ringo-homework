@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head.ejs", {title: 'New Pokemon' }) %>
+<% 
+const getTypeString = type => {
+    res = ''
+    for (let i = 0; i < type.length-1; i++) {
+        res += type[i] + ','
+    }
+    res += type[type.length-1]
+    return res
+}
+%> 
+<body class="main box">
+    <%- include("partials/navbar.ejs") %>
+    <div class="view box">
+        <div class="pokemon-info new">
+            <div class="pokemon-name">Edit Pokemon</div>
+            <form action="/pokemon/<%= pokemon.id %>?_method=PUT" method="POST">
+                Name: <input type="text" name="name" value="<%= pokemon.name %>"/> <br/>
+                ID: <input type="text" name="id" value="<%= pokemon.id %>"/> <br/>
+                Img URL: <input type="text" name="img" value="<%= pokemon.img %>"/> <br/>
+                Type(s): <input type="text" name="type" value="<%= getTypeString(pokemon.type) %>"/> <br>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/535/535234.png"> <input class="poke-input stat" type="text" name="hp" value=<%= pokemon.stats.hp %>></td>
+                        <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/233/233146.png"> <input class="poke-input stat" type="text" name="speed" value=<%= pokemon.stats.speed %> ></td>
+                    </tr>
+                    <tr>
+                        <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/99/99865.png"> <input class="poke-input stat" type="text" name="attack" value=<%= pokemon.stats.attack %>></td>
+                        <td><img class="stat-icon" src="https://cdn-icons-png.flaticon.com/512/786/786346.png"> <input class="poke-input stat" type="text" name="defense" value=<%= pokemon.stats.defense %>></td>
+                    </tr>
+                    <tr>
+                        <td><img class="stat-icon special" src="https://cdn-icons-png.flaticon.com/512/99/99865.png"> <input class="poke-input stat" type="text" name="spattack" value=<%= pokemon.stats.spattack %>></td>
+                        <td><img class="stat-icon special" src="https://cdn-icons-png.flaticon.com/512/786/786346.png"> <input class="poke-input stat" type="text" name="spdefense" value=<%= pokemon.stats.spdefense %>></td>
+                    </tr>
+                </table>
+                <input style="margin-left: 25%;margin-top: 10px;" type="submit" value="Update Pokemon"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -7,7 +7,6 @@
     let pokemon = <%- JSON.stringify(pokemon) %>;
 
     const preprocessMonImgs = () => {
-        let index = 1;
         for (pokemon of pokemon) {
             let curMonImg = $('<img>');
             curMonImg.attr('src', pokemon.img);
@@ -16,12 +15,12 @@
             pokeNum.addClass('poke-num')
             pokeNum.text(pokemon.id);
             let monDiv = $('<a>');
-            monDiv.attr('href','pokemon/'+index)
+            monDiv.attr('href','pokemon/'+pokemon.id)
             monDiv.addClass('pokemon-card');
+            monDiv.addClass('box');
             monDiv.append(curMonImg);
             monDiv.append(pokeNum);
             $('.poke-display').append(monDiv);
-            index++;
         }
     }
 

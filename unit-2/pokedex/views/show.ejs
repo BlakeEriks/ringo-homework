@@ -31,6 +31,14 @@
                             <td><img class="stat-icon special" src="https://cdn-icons-png.flaticon.com/512/786/786346.png"> <%= pokemon.stats.spdefense %></td>
                         </tr>
                     </table>
+                    <div class="buttons" style="margin-top: 10px;">
+                        <form action="/pokemon/<%= pokemon.id %>/edit" method="GET" style="margin-right: 20px;">
+                            <button class="button is-warning is-small">Edit</button>
+                        </form>
+                        <form action="/pokemon/<%= pokemon.id %>?_method=DELETE" method="POST">
+                            <button class="button is-danger is-small">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

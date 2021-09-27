@@ -55,6 +55,7 @@
     flex-direction: column;
     justify-content: flex-end;
     height: 215px;
+    
 }
 
 img.pokemon {
@@ -145,4 +146,9 @@ td {
 
 .poke-input.stat {
     width:40px;
+}
+
+.pokemon-error {
+    font-size: 32px;
+    color: var(--theme-color-1);
 }
