@@ -28,7 +28,7 @@ router.get("/new", (req, res) => {
 // create route
 router.post("/", (req, res) => {
   // check if the readyToEat property should be true or false
-  req.body.readyToEat = req.body.readyToEat === "on" ? true : false;
+  req.body.readyToEat = req.body.readyToEat === "on";
   // create the new fruit
   Fruit.create(req.body, (err, fruit) => {
     // redirect the user back to the main fruits page after fruit created
