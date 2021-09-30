@@ -9,4 +9,11 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res) => {
+    Animal.findById(req.params.id, (err, animal) => {
+        console.log(animal)
+        res.render('animals/show.ejs', {animal})
+    })
+})
+
 module.exports = router
