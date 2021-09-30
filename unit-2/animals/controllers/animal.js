@@ -15,11 +15,22 @@ router.delete('/:id', (req,res) => {
     })
 })
 
+router.post('/', (req,res) => {
+    req.body.extinct = req.body.extinct === 'on'
+    Animal.create(req.body, (err,animal) => {
+        res.redirect('/animals')
+    })
+})
+
 router.put('/:id', (req,res) => {
     req.body.extinct = req.body.extinct === 'on'
     Animal.findByIdAndUpdate(req.params.id, req.body, (err,animal) => {
         res.redirect('/animals')
     })
+})
+
+router.get('/new', (req,res) => {
+    res.render('animals/new.ejs')
 })
 
 router.get('/:id/edit', (req,res) => {
