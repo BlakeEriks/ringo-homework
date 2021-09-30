@@ -9,9 +9,27 @@ router.get('/', (req, res) => {
     })
 })
 
+router.delete('/:id', (req,res) => {
+    Animal.findByIdAndDelete(req.params.id, (err, animal) => {
+        res.redirect('/animals')
+    })
+})
+
+router.put('/:id', (req,res) => {
+    req.body.extinct = req.body.extinct === 'on'
+    Animal.findByIdAndUpdate(req.params.id, req.body, (err,animal) => {
+        res.redirect('/animals')
+    })
+})
+
+router.get('/:id/edit', (req,res) => {
+    Animal.findById(req.params.id, (err, animal) => {
+        res.render('animals/edit.ejs', {animal})
+    })
+})
+
 router.get('/:id', (req, res) => {
     Animal.findById(req.params.id, (err, animal) => {
-        console.log(animal)
         res.render('animals/show.ejs', {animal})
     })
 })

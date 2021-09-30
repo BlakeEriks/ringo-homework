@@ -8,9 +8,15 @@
                     <h2><%= animal.species %></h2>
                     <p>
                         <Life>Location: <%= animal.location %> <br/>
-                        Life Expentancy: <%= animal.location %> <br/>
-                        Extinct: <% animal.extinct ? 'Yes' : 'No' %> 
+                        Life Expentancy: <%= animal.lifeExpectancy %> <br/>
+                        Extinct: <%= animal.extinct ? 'Yes' : 'No' %> 
                     </p>
+                    <a href="/animals/<%= animal.id %>/edit">
+                        <button>Edit</button>
+                    </a>
+                    <form action="/animals/<%= animal.id %>?_method=DELETE" method="POST" style="display:inline;">
+                        <button>Delete</button>
+                    </form>
                 </article>
             </div>
         </main>
