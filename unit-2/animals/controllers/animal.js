@@ -13,7 +13,7 @@ router.use((req,res,next) => {
 })
 
 router.get('/', (req, res) => {
-    Animal.find({}, (err, animals) => {
+    Animal.find({username: req.session.username}, (err, animals) => {
         res.render('animals/index.ejs', {animals})
     })
 })
@@ -26,6 +26,7 @@ router.delete('/:id', (req,res) => {
 
 router.post('/', (req,res) => {
     req.body.extinct = req.body.extinct === 'on'
+    req.body.username = req.session.username
     Animal.create(req.body, (err,animal) => {
         res.redirect('/animals')
     })

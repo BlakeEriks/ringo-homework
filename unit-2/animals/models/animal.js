@@ -7,6 +7,7 @@ const animalSchema = new Schema({
     extinct: Boolean,
     location: String,
     lifeExpectancy: Number,
+    username: String
 })
 
 const Animal = model('Animal', animalSchema)
