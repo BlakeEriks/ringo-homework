@@ -3,23 +3,31 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/header.ejs') %> 
-    <h2> Edit <%= animal.species %> </h2>
-    <form action="/animals/<%= animal._id %>?_method=PUT" method="POST">
-        <fieldset>
-            <label> Species: 
-                <input type="text" value="<%= animal.species %>" name="species">
-            </label>
-            <label> Location: 
-                <input type="text" value="<%= animal.location %>" name="location">
-            </label>
-            <label> Life Expentancy: 
-                <input type="text" value="<%= animal.lifeExpectancy %>" name="lifeExpectancy">
-            </label>
-            <label> Extinct: 
-                <input type="checkbox" name="extinct" <%= animal.extinct ? 'checked' : '' %> >
-            </label>
-            <input type="submit" value="Update"></input>
-        </fieldset>
-    </form>
+    <main>
+        <div style="display: flex;justify-content: center;">
+            <article class="card text-center" style="width: 18rem">
+                <div class="card-body">
+                    <h2> Edit <%= animal.species %> </h2>
+                    <form action="/animals/<%= animal._id %>?_method=PUT" method="POST">
+                        <fieldset>
+                            <label> Species: 
+                                <input type="text" value="<%= animal.species %>" name="species">
+                            </label>
+                            <label> Location: 
+                                <input type="text" value="<%= animal.location %>" name="location">
+                            </label>
+                            <label> Life Expentancy: 
+                                <input type="text" value="<%= animal.lifeExpectancy %>" name="lifeExpectancy" style="width: 120px;">
+                            </label>
+                            <label> Extinct: 
+                                <input type="checkbox" name="extinct" <%= animal.extinct ? 'checked' : '' %> >
+                            </label>
+                            <input type="submit" value="Update"></input>
+                        </fieldset>
+                    </form>
+                </div>
+            </article>
+        </div>
+    </main>
 </body>
 </html>

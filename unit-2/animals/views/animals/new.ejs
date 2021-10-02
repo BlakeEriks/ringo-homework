@@ -2,25 +2,37 @@
 <html lang="en">
 <%- include('../partials/head.ejs') %>
 <body>
-    <%- include('../partials/header.ejs') %>
-    <form action="/animals" method="POST">
-        <fieldset>
-            <legend>Add New Animal</legend>
-            
-            <label> Species: 
-                <input type="text" name="species">
-            </label>
-            <label> Location: 
-                <input type="text" name="location">
-            </label>
-            <label> Life Expentancy: 
-                <input type="text" name="lifeExpectancy">
-            </label>
-            <label> Extinct: 
-                <input type="checkbox" name="extinct">
-            </label>
-            <input type="submit" value="Create"></input>
-        </fieldset>
-    </form>
+    <main>
+        <%- include('../partials/header.ejs') %>
+        <div style="display: flex;justify-content: center;">
+            <article class="card text-center" style="width: 18rem">
+                <div class="card-body">
+                    
+                    <form action="/animals" method="POST">
+                        <fieldset>
+                            <legend class="card-title">Add New Animal</legend>
+                            
+                            <label> Species: 
+                                <input type="text" name="species">
+                            </label>
+                            <label> Location: 
+                                <input type="text" name="location">
+                            </label>
+                            <label> Life Expentancy: 
+                                <input type="text" name="lifeExpectancy" style="width: 120px;">
+                            </label>
+                            <label> Extinct: 
+                                <input type="checkbox" name="extinct">
+                            </label>
+                            <a href="/animals">
+                                <button type="menu" class="btn btn-primary">Back</button>
+                            </a>
+                            <input class="btn btn-primary" type="submit" value="Create"></input>
+                        </fieldset>
+                    </form>
+                </div>
+            </article>
+        </div>
+    </main>
 </body>
 </html>

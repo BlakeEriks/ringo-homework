@@ -4,15 +4,15 @@
     <body>
         <%- include('../partials/header.ejs') %> 
         <main>
-            <div>
-                <a href="/animals/new">Add new animal</a>
+            <div class="list-group">
                 <% for (animal of animals) { %> 
-                    <article>
-                    <a href="/animals/<%= animal._id  %> ">
+                <article >
+                    <a href="/animals/<%= animal._id  %>" class="list-group-item list-group-item-action">
                         <h2><%= animal.species %></h2>
                     </a>
                 </article>
                 <% } %> 
+                <a class="list-group-item list-group-item-action" href="/animals/new">Add new animal</a>
             </div>
         </main>
     </body>
