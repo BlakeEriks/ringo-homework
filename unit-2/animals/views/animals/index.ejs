@@ -5,6 +5,7 @@
         <%- include('../partials/header.ejs') %> 
         <main>
             <div class="list-group">
+                <a href="/user/logout"><button class="btn btn-primary">Logout</button></a>
                 <% for (animal of animals) { %> 
                 <article >
                     <a href="/animals/<%= animal._id  %>" class="list-group-item list-group-item-action">

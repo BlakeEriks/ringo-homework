@@ -3,6 +3,15 @@ const Animal = require('../models/animal')
 
 const router = express.Router();
 
+router.use((req,res,next) => {
+    if (req.session.loggedIn) {
+        next();
+    }
+    else {
+        res.redirect('/user/login')
+    }
+})
+
 router.get('/', (req, res) => {
     Animal.find({}, (err, animals) => {
         res.render('animals/index.ejs', {animals})
