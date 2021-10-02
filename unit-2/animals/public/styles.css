@@ -9,3 +9,9 @@ h1 {
 html > * { 
     font-family: Roboto;
 }
+
+header {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
+}

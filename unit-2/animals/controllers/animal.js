@@ -14,7 +14,7 @@ router.use((req,res,next) => {
 })
 
 router.get('/', (req, res) => {
-    Animal.find({username: req.session.username}, (err, animals) => {
+    Animal.find({username: {$in: [req.session.username, null]}}, (err, animals) => {
         res.render('animals/index.ejs', {animals})
     })
 })

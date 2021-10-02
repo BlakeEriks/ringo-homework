@@ -27,11 +27,17 @@ router.post("/login", (req, res) => {
     // check if user exists
     User.findOne({ username }, async (err, user) => {
       // handle if user doesn't exist
-      if (err) res.send("user doesn't exist");
+      if (!user) {
+        res.send("user doesn't exist");
+        return;
+      }
       // compare passwords
       const result = await bcrypt.compare(password, user.password);
       // check is match was a success
-      if (!result) res.send("wrong password");
+      if (!result) {
+        res.send("wrong password");
+        return
+      }
       // save login info in sessions
       req.session.loggedIn = true
       req.session.username = username
