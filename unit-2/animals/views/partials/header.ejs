@@ -1,15 +1,37 @@
 <header>
-    <a href="/animals" class="list-group-item-action" style="text-decoration: none;">
-        <h1 class="display-1">
-            <small class="text-muted">@(^.^)@</small> Animals <small class="text-muted">@(^.^)@</small>
-        </h1>
-    </a>
-    <figure class="text-center">
-        <blockquote class="blockquote">
-            <p>“Until one has loved an animal, a part of one's soul remains unawakened.”</p>
-          </blockquote>
-          <figcaption class="blockquote-footer">
-            <cite title="Source Title">Anatole France</cite>
-          </figcaption>
-    </figure>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <a class="navbar-brand" href="/" style="margin-left: 20px;">Hello <%= locals.username ? username : '' %>!</a>
+
+        <% if (locals.username) { %> 
+        <a href="/user/logout" style="margin-right: 20px;">
+            <button class="btn btn-outline-danger my-2 my-sm-0">Logout</button>
+        </a>
+        <% } else { %>
+        <div style="margin-right: 20px;">
+            <a href="/user/signup">
+                <button class="btn btn-outline-success my-2 my-sm-0">Sign Up</button>
+            </a>
+            <a href="/user/login">
+                <button class="btn btn-outline-secondary my-2 my-sm-0">Log In</button>
+            </a>
+        </div>
+        <% } %> 
+        
+    </nav>
+
+    <div>
+        <a href="/animals" class="list-group-item-action" style="text-decoration: none;">
+            <h1 class="display-1">
+                <small class="text-muted">@(^.^)@</small> Animals <small class="text-muted">@(^.^)@</small>
+            </h1>
+        </a>
+        <figure class="text-center">
+            <blockquote class="blockquote">
+                <p>“Until one has loved an animal, a part of one's soul remains unawakened.”</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                <cite title="Source Title">Anatole France</cite>
+              </figcaption>
+        </figure>
+    </div>
 </header>
