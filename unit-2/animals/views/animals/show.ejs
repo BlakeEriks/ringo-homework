@@ -5,7 +5,7 @@
         <main>
             <%- include('../partials/header.ejs') %> 
             <div style="display: flex;justify-content: center;">
-                <article class="card text-center" style="width: 18rem">
+                <article x-data="{showTools: false}" class="card text-center" style="width: 18rem">
                     <div class="card-body">
                         <h2 class="card-title"><%= animal.species %></h2>
                         <p class="card-text">
@@ -13,7 +13,8 @@
                             Life Expentancy: <%= animal.lifeExpectancy %> <br/>
                             Extinct: <%= animal.extinct ? 'Yes' : 'No' %> 
                         </p>
-                        <div class="btn-group">
+                        <button class="btn btn-primary" x-on:click="showTools = !showTools" style="margin-bottom: 5px;">Show Options</button>
+                        <div x-show="showTools" class="btn-group" x-transition>
                             <a href="/animals">
                                 <button class="btn btn-primary">Back</button>
                             </a>
