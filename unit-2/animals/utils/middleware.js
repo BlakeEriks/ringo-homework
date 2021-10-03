@@ -7,6 +7,7 @@ const morgan = require("morgan"); //import morgan
 const methodOverride = require("method-override");
 const AnimalRouter = require("../controllers/animal");
 const UserRouter = require("../controllers/user");
+const HomeRouter = require('../controllers/home');
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
@@ -29,6 +30,7 @@ const middleware = app => {
   );
   app.use("/animals", AnimalRouter);
   app.use("/user", UserRouter);
+  app.use('/', HomeRouter)
 };
 
 ///////////////////////////////////////////
