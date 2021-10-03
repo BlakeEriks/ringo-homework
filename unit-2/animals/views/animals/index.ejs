@@ -7,9 +7,14 @@
             <div class="list-group">
                 <% for (animal of animals) { %> 
                 <article >
-                    <a href="/animals/<%= animal._id  %>" class="list-group-item list-group-item-action">
-                        <h2><%= animal.species %></h2>
-                    </a>
+                    <h2
+                    hx-get="/animals/<%= animal._id %>"
+                    hx-trigger="click"
+                    hx-target="main"
+                    hx-swap=innerHTML
+                    class="list-group-item list-group-item-action">
+                        <%= animal.species %>
+                    </h2>
                 </article>
                 <% } %> 
                 <a class="list-group-item list-group-item-action" href="/animals/new">Add new animal</a>
