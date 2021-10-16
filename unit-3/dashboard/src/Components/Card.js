@@ -2,7 +2,9 @@ const Card = props => {
     return (
         <div className={'card ' + props.className}>
             <div className='card-header'>
-                {props.title}
+                <h2>    
+                    {props.title}
+                </h2>
             </div>
             <div className='card-content'>
                 {props.content}
