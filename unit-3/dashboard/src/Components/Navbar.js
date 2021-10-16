@@ -1,13 +1,18 @@
+import NavbarElement from "./NavbarElement"
+import React, { useState } from 'react';
+
 const Navbar = () => {
+
+    const [selected, setSelected] = useState('Dashboard')
 
     return (
         <div className='navbar'>
-            <div className='navbar-element selected'>Dashboard</div>
-            <div className='navbar-element'>Widget</div>
-            <div className='navbar-element'>Reviews</div>
-            <div className='navbar-element'>Customers</div>
-            <div className='navbar-element'>Online Analysis</div>
-            <div className='navbar-element'>Settings</div>
+            <NavbarElement selected={selected} setSelected={setSelected} title='Dashboard' />
+            <NavbarElement selected={selected} setSelected={setSelected} title='Widget' />
+            <NavbarElement selected={selected} setSelected={setSelected} title='Reviews' />
+            <NavbarElement selected={selected} setSelected={setSelected} title='Customers' />
+            <NavbarElement selected={selected} setSelected={setSelected} title='Online Analysis' />
+            <NavbarElement selected={selected} setSelected={setSelected} title='Settings' />
         </div>
     )
 }
