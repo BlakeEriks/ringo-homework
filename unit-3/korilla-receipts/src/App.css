@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.receipt-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.receipt-item {
+  width: 12em;
+  border: 2px dotted black;
+}
+
+.receipt-person {
+
+}
+
+
+
+.receipt-details {
+  text-align: left;
+  margin: 4px 10px;
+}
