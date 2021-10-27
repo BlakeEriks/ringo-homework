@@ -1,6 +1,6 @@
 const GetGiphy = ({getGiphy}) => {
     return (
-        <div>
+        <div className="button-container">
             <button onClick={getGiphy}>Giv me a giphy!</button>
         </div>
     )
