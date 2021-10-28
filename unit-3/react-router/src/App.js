@@ -1,35 +1,27 @@
+import { Route, Switch } from 'react-router';
 import './App.css';
-import {VerticleFlexBox, HorizontalFlexBox} from "./Styles/Containers"
+import Nav from './components/Nav';
+import About from './pages/About';
+import Home from './pages/Home';
+import Stocks from './pages/Stocks';
+import tickerData from './tickerData';
 
 function App() {
   return (
-    <>
-      <VerticleFlexBox>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </VerticleFlexBox>
-      <VerticleFlexBox alignLeft>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </VerticleFlexBox>
-      <VerticleFlexBox alignRight>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </VerticleFlexBox>
-      <HorizontalFlexBox alignRight>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </HorizontalFlexBox>
-      <HorizontalFlexBox alignLeft>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-        <div style={{height: '20px'}}>I am div</div>
-      </HorizontalFlexBox>
-    </>
+    <div className="App">
+      <Nav />
+      <Switch>
+        <Route exact path="/" >
+          <Home />
+        </Route>
+        <Route path="/about" >
+          <About />
+        </Route>
+        <Route path="/stocks">
+          <Stocks />
+        </Route>
+      </Switch>      
+    </div>
   );
 }
 
