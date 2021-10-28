@@ -2,9 +2,9 @@ import { Route, Switch } from 'react-router';
 import './App.css';
 import Nav from './components/Nav';
 import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
-import Stocks from './pages/Stocks';
-import tickerData from './tickerData';
+import Stock from './pages/Stock';
 
 function App() {
   return (
@@ -17,8 +17,12 @@ function App() {
         <Route path="/about" >
           <About />
         </Route>
+        <Route
+          path="/stocks/:symbol"
+          render={routerProps => <Stock {...routerProps} />}
+        />
         <Route path="/stocks">
-          <Stocks />
+          <Dashboard />
         </Route>
       </Switch>      
     </div>
