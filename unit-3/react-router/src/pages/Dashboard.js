@@ -14,8 +14,8 @@ const Dashboard = props => {
                     <span className={ticker.change > 0 ? 'green' : 'red'}>
                     {' (' + ticker.symbol + ' '} 
                     {ticker.change > 0 ? '+' : ''}{ticker.change.toPrecision(2) + '%'}
-                    </span>
                     {')'}
+                    </span>
                 </h2>
             </Link>
         )
