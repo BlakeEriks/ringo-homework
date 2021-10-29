@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Route, Switch } from 'react-router';
 import './App.css';
 import Nav from './components/Nav';
@@ -7,6 +8,7 @@ import Home from './pages/Home';
 import Stock from './pages/Stock';
 
 function App() {
+
   return (
     <div className="App">
       <Nav />
