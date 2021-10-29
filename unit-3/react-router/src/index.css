@@ -22,6 +22,7 @@ code {
 .nav-item {
   font-size: 4em;
   padding: 20px;
+  text-decoration: none;
 }
 
 .green {
