@@ -9,13 +9,24 @@ class TweetsController < ApplicationController
     end
 
     def create
-        tweet = Tweet.net(tweet_params)
+        tweet = Tweet.new tweet_params
 
         if tweet.save
             render json: {status: 201, tweet: tweet}
         else
             render json: {status: 422, tweet: tweet}
         end
+    end
+
+    def update
+        tweet = Tweet.find params[:id]
+        tweet.update tweet_params
+        render json: {status: 200, tweet: tweet}
+    end
+
+    def destroy
+        Tweet.destroy params[:id]
+        render json: {status: 204}
     end
 
     private 
