@@ -16,3 +16,15 @@ Tweet.create({
   content: "Hey, I'm walkin' here!",
   author: "Nicky62"
 })
+
+Reply.create({
+    author: "Yourmom69",
+    content: "Lol you're an idiot",
+    tweet_id: 1
+})
+
+Reply.create({
+    author: "Yourmom68",
+    content: "Great idea! you're a genius",
+    tweet_id: 1
+})
